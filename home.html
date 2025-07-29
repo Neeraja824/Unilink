@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniLink</title>
+  <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="container">
+     <div class="logo">
+  <img src="./unilink.jpg" alt="UniLink Logo" />
+  <span class="logoname">UniLink</span>
+</div>
+    <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+       <div class="nav-section" id="nav-section">
+        <nav class="nav-links">
+          <a href="#">Dashboard</a>
+          <a href="#">IdeaHub</a>
+          <div class="dropdown">
+          <!-- <a href="#" class="has-submenu">CampusConnect ▼</a> -->
+           <a href="#" class="has-submenu">CampusConnect <span class="arrow">▾</span></a>
+                  <div class="submenu">
+                  <a href="#">Resume Builder</a>
+                  <a href="#">Campus Network</a>
+             </div>
+          </div>
+          <a href="#">Hackathons</a>
+          <a href="#">CampusX</a>
+          <a href="#">Puzzle</a>
+        </nav>
+        <div class="auth-buttons">
+          <a href="#" class="login">Login</a>
+          <a href="#" class="signup">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="container hero">
+    <div class="hero-content">
+      <span class="badge">🚀 New Platform for Students</span>
+      <h1>
+        <span class="highlight">Connect.</span>
+        <span class="highlight">Create.</span>
+        <span class="highlight orange">Collaborate!</span>
+      </h1>
+      <p>
+        Your all-in-one university platform for book trading, resume building,
+        project collaboration, and academic networking. Join thousands of
+        students connecting across campus.
+      </p>
+      <div class="buttons">
+        <a href="#" class="btn primary">Get Started →</a>
+        <a href="#" class="btn secondary">💡 Explore Ideas</a>
+      </div>
+      <div class="stats">
+        <div><strong>1,200+</strong>Books Traded</div>
+        <div><strong>850+</strong>Students</div>
+        <div><strong>500+</strong>Resumes Built</div>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="student.png.png" alt="Students Collaborating"/>
+    </div>
+  </section>
+
+  <script>
+    const toggleBtn = document.getElementById('nav-toggle');
+    const navSection = document.getElementById('nav-section');
+    toggleBtn.addEventListener('click', () => {
+      navSection.classList.toggle('show');
+    });
+  </script>
+  <script>
+  const submenuTrigger = document.querySelector('.has-submenu');
+  const submenu = document.querySelector('.submenu');
+
+  submenuTrigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    submenu.classList.toggle('show');
+    
+  });
+</script>
+</body>
+</html>
+

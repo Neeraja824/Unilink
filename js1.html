@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Move Image</title>
+  <style>
+    #myImage {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <img id="myImage" src="../bird.jpg" alt="bird"><br><br>
+  <button onclick="moveUp()">Up</button>
+  <button onclick="moveDown()">Down</button>
+  <button onclick="moveLeft()">Left</button>
+  <button onclick="moveRight()">Right</button>
+
+  <script>
+    let img = document.getElementById("myImage");
+    let topPos = 0;
+    let leftPos = 0;
+
+    function moveUp() {
+      topPos -= 10;
+      img.style.top = topPos + "px";
+    }
+
+    function moveDown() {
+      topPos += 10;
+      img.style.top = topPos + "px";
+    }
+
+    function moveLeft() {
+      leftPos -= 10;
+      img.style.left = leftPos + "px";
+    }
+
+    function moveRight() {
+      leftPos += 10;
+      img.style.left = leftPos + "px";
+    }
+  </script>
+</body>
+</html>

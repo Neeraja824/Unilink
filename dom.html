@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>dom</title>
+    </head>
+    <!-- <body>
+         <p>para-1</p>
+         <p>para-2</p>
+         <div class="demo"></div>
+          <div class="demo"></div>
+         <div id="thub"></div> -->
+        <img src="../bird.jpg" alt="mercury" width="200px" height="200px"><br>
+        <button onclick="fun()">click-here</button>
+        <script>
+        //   console.log(document.getElementsByTagName("p"));
+        //   console.log(document.getElementsByClassName("demo"));
+        //   console.log(document.getElementById("thub"));
+        //   console.log(document.querySelectorAll("demo"));
+        //   console.log(document.querySelector("p"));
+            function fun() {
+            document.getElementsByTagName("img")[0].src = "../mercury.jpg";
+        }
+        </script>
+    </body>
+</html>
