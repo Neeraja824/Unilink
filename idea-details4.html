@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Sustainability Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0fdf4; /* Very light green background */
+      color: #1a202c;
+      margin: 0;
+      padding: 0;
+    }
+    .bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%; /* Ensures video covers width */
+        min-height: 100%; /* Ensures video covers height */
+        object-fit: cover;
+        z-index: -1;
+    }
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      position: relative; /* Ensure content is above video */
+      z-index: 1; /* Ensure content is above video */
+      background-color: rgba(255, 255, 255, 0.8); /* Added a semi-transparent white background for readability over video */
+      border-radius: 12px; /* Optional: adds rounded corners to the content section */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+    }
+    .title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #16a34a; /* Green color for title */
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 40px;
+    }
+    .subtitle .author { /* Styling for the author's name */
+        font-weight: bold;
+        color: #333; /* Darker color for prominence */
+    }
+    .subtitle .difficulty-badge { /* Styling for the difficulty badge, consistent with IdeaHub */
+        background-color: #fcd34d; /* Tailwind yellow-300 equivalent for Intermediate */
+        color: #78350f; /* Darker brown for contrast */
+        padding: 4px 8px;
+        border-radius: 9999px; /* Rounded-full */
+        font-size: 0.9rem; /* Slightly smaller than subtitle text */
+        margin-left: 10px; /* Space from author name */
+        display: inline-block; /* Ensures padding/margin works */
+        font-weight: 600;
+    }
+    .features, .benefits, .security, .tools {
+      margin-bottom: 40px;
+    }
+    h3 {
+      font-size: 1.6rem;
+      color: #16a34a; /* Green color for headings */
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+        margin-bottom: 8px; /* Add some spacing between list items */
+        line-height: 1.5; /* Improve line height for readability */
+    }
+    li::before {
+      content: "✔"; /* Default checkmark for features/benefits */
+      margin-right: 10px;
+      color: #4CAF50; /* A nice green for checkmarks */
+      font-weight: bold;
+    }
+    .security ul li::before { /* Specific icon for security section */
+        content: "🔒";
+        color: #ff9800; /* An orange for security */
+    }
+    .tools ul li::before { /* Specific icon for tools section */
+        content: "🛠";
+        color: #3f51b5; /* A darker blue for tools */
+    }
+    .call-to-action {
+      background-color: #16a34a; /* Green for CTA background */
+      color: white;
+      padding: 25px; /* Slightly increased padding */
+      text-align: center;
+      border-radius: 8px;
+      margin-top: 50px; /* Space before CTA */
+    }
+    .call-to-action h4 {
+      font-size: 1.5rem; /* Slightly larger heading for CTA */
+      margin: 0 0 15px; /* Adjusted margin */
+    }
+    .call-to-action p {
+        margin-bottom: 10px; /* Space between paragraph and link */
+        font-size: 1.1rem;
+        color: white; /* Ensure text is white in CTA */
+    }
+    .call-to-action a {
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    .call-to-action a:hover {
+        color: #d1fae5; /* Lighter green/white hover color for contrast */
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop class="bg-video">
+    <source src="./Campusgif.mp4" type="video/mp4">
+  </video>
+  <section class="section">
+    <h1 class="title">🌱 Campus Sustainability Tracker</h1>
+    <p class="subtitle">
+        <span class="author">By Mike Johnson</span>
+        <span class="difficulty-badge">Intermediate</span>
+        <br/>A gamified platform to track and reduce campus carbon footprint through student challenges and green initiatives.
+    </p>
+
+    <div class="features">
+      <h3>💡 Key Features</h3>
+      <ul>
+        <li>Real-Time Carbon Footprint Dashboard</li>
+        <li>Gamified Challenges & Digital Badges</li>
+        <li>Team-Based Environmental Competitions</li>
+        <li>Green Tips & Daily Eco-Missions</li>
+        <li>Event Integration for On-Campus Sustainability</li>
+        <li>Leaderboards & Public Recognition</li>
+      </ul>
+    </div>
+
+    <div class="benefits">
+      <h3>✅ Benefits</h3>
+      <ul>
+        <li>Encourage sustainable habits among students</li>
+        <li>Build community around climate action</li>
+        <li>Generate measurable environmental data</li>
+        <li>Support campus green initiatives</li>
+        <li>Motivate ongoing engagement and awareness</li>
+      </ul>
+    </div>
+
+    <div class="security">
+      <h3>🔐 Secure & Transparent</h3>
+      <ul>
+        <li>User privacy settings and anonymous options</li>
+        <li>Secure tracking of event participation</li>
+        <li>Ethical data collection and reporting</li>
+      </ul>
+    </div>
+
+    <div class="tools">
+      <h3>🛠 Tools & Technologies Used</h3>
+      <ul>
+        <li>Carbon Footprint APIs & Calculators</li>
+        <li>Gamification Frameworks (e.g., BadgeOS)</li>
+        <li>React, Flutter for Web & Mobile Apps</li>
+        <li>Real-Time Dashboards and Analytics</li>
+        <li>QR/NFC Tech for Event Engagement</li>
+        <li>Cloud Databases with Security Protocols</li>
+      </ul>
+    </div>
+
+    <div class="call-to-action">
+      <h4>Make sustainability a shared mission.</h4>
+      <p>Empower students to take meaningful action through fun, data-driven environmental challenges.</p>
+      <p><a href="#">Request a Demo</a></p>
+    </div>
+  </section>
+</body>
+</html>

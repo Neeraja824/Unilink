@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
+  
   <div class="container">
     <h1><span class="highlight">CampusConnect</span> Resume Builder</h1>
     <p class="subtitle">Create professional resumes with our easy-to-use builder and beautiful templates</p>
@@ -52,28 +53,57 @@
     <span><i class="fas fa-graduation-cap"></i> Education</span>
     <button type="button" class="add-button">+ Add Education</button>
   </h3>
-  <div class="grid-2x2">
-    <div><label>Degree *</label><input type="text" placeholder="Bachelor of Science in Computer Science" required></div>
-    <div><label>Institution *</label><input type="text" placeholder="University Name" required></div>
-    <div><label>Graduation Year</label><input type="text" placeholder="2024"></div>
-    <div><label>GPA (Optional)</label><input type="text" placeholder="3.8/4.0"></div>
+  <div class="education-container">
+    <div class="grid-2x2 edu-entry">
+      <div><label>Degree *</label><input type="text" required></div>
+      <div><label>Institution *</label><input type="text" required></div>
+      <div><label>Graduation Year</label><input type="text"></div>
+      <div><label>GPA (Optional)</label><input type="text"></div>
+    </div>
+    <div class="grid-2x2 edu-entry hidden">
+      <!-- Duplicate education fields -->
+      <div><label>Degree *</label><input type="text" required></div>
+      <div><label>Institution *</label><input type="text" required></div>
+      <div><label>Graduation Year</label><input type="text"></div>
+      <div><label>GPA (Optional)</label><input type="text"></div>
+    </div>
+    <div class="grid-2x2 edu-entry hidden">
+      <!-- Another duplicate -->
+      <div><label>Degree *</label><input type="text" required></div>
+      <div><label>Institution *</label><input type="text" required></div>
+      <div><label>Graduation Year</label><input type="text"></div>
+      <div><label>GPA (Optional)</label><input type="text"></div>
+    </div>
   </div>
 </section>
 
 <!-- Experience -->
-<section class="form-section">
-  <h3 class="section-title">
-    <span><i class="fas fa-briefcase"></i> Experience</span>
-    <button type="button" class="add-button">+ Add Experience</button>
-  </h3>
-  <div class="grid-2x2">
-    <div><label>Job Title *</label><input type="text" placeholder="Software Developer Intern" required></div>
-    <div><label>Company *</label><input type="text" placeholder="Tech Company Inc." required></div>
-    <div><label>Duration</label><input type="text" placeholder="June 2023 - August 2023"></div>
-    <div><label>Description</label><input type="text" placeholder="Describe your responsibilities and achievements..."></div>
-  </div>
-</section>
-
+      <section class="form-section">
+        <h3 class="section-title">
+          <span><i class="fas fa-briefcase"></i> Experience</span>
+          <button type="button" class="add-button">+ Add Experience</button>
+        </h3>
+        <div class="experience-container">
+          <div class="grid-2x2 exp-entry">
+            <div><label>Job Title *</label><input type="text" required></div>
+            <div><label>Company *</label><input type="text" required></div>
+            <div><label>Duration</label><input type="text"></div>
+            <div><label>Description</label><input type="text"></div>
+          </div>
+          <div class="grid-2x2 exp-entry hidden">
+            <div><label>Job Title *</label><input type="text" required></div>
+            <div><label>Company *</label><input type="text" required></div>
+            <div><label>Duration</label><input type="text"></div>
+            <div><label>Description</label><input type="text"></div>
+          </div>
+          <div class="grid-2x2 exp-entry hidden">
+            <div><label>Job Title *</label><input type="text" required></div>
+            <div><label>Company *</label><input type="text" required></div>
+            <div><label>Duration</label><input type="text"></div>
+            <div><label>Description</label><input type="text"></div>
+          </div>
+        </div>
+      </section>
 <!-- Skills -->
 <section class="form-section">
   <h3 class="section-title">
@@ -89,18 +119,58 @@
     <span><i class="fas fa-project-diagram"></i> Projects</span>
     <button type="button" class="add-button">+ Add Project</button>
   </h3>
-  <div class="project-grid">
-    <div><label>Project Name *</label><input type="text" placeholder="E-commerce Website" required></div>
-    <div><label>Technologies Used</label><input type="text" placeholder="React, Node.js, MongoDB"></div>
-    <div><label>Description</label><textarea placeholder="Describe the project and your contributions..."></textarea></div>
+  <div class="project-container">
+    <div class="project-grid proj-entry">
+      <div><label>Project Name *</label><input type="text" required></div>
+      <div><label>Technologies Used</label><input type="text"></div>
+      <div><label>Description</label><textarea></textarea></div>
+    </div>
+    <div class="project-grid proj-entry hidden"><div class="project-grid proj-entry">
+      <div><label>Project Name *</label><input type="text" required></div>
+      <div><label>Technologies Used</label><input type="text"></div>
+      <div><label>Description</label><textarea></textarea></div>
+    </div></div>
+    <div class="project-grid proj-entry hidden"><div class="project-grid proj-entry">
+      <div><label>Project Name *</label><input type="text" required></div>
+      <div><label>Technologies Used</label><input type="text"></div>
+      <div><label>Description</label><textarea></textarea></div>
+    </div></div>
   </div>
 </section>
- <div class="submit-wrapper">
-  <!-- <a href="templates.html"><button type="submit" class="submit-btn">Continue to Templates</button></a> -->
-   <button class="submit-btn" onclick="window.location.href='templates.html'">Continue to Templates</button>
-
+  <div class="footer">
+  <button class="back-btn" onclick="window.location.href='home.html'">← Back to Home</button>
+  <div class="right-buttons">
+  <button class="generate-btn" onclick="window.location.href='templates.html'">Continue to Templates</button>
+  </div>
 </div>
 </form>
   </div>
+  <script>
+  // Generic function to reveal next hidden section
+  function revealNextSection(containerSelector, sectionClass) {
+    const container = document.querySelector(containerSelector);
+    const sections = container.querySelectorAll(`.${sectionClass}`);
+    for (let sec of sections) {
+      if (sec.classList.contains('hidden')) {
+        sec.classList.remove('hidden');
+        break;
+      }
+    }
+  }
+
+  // Event listeners for each add button
+  document.querySelector('.add-button:nth-of-type(1)').addEventListener('click', function() {
+    revealNextSection('.education-container', 'edu-entry');
+  });
+
+  document.querySelector('.add-button:nth-of-type(2)').addEventListener('click', function() {
+    revealNextSection('.experience-container', 'exp-entry');
+  });
+
+  document.querySelector('.add-button:nth-of-type(3)').addEventListener('click', function() {
+    revealNextSection('.project-container', 'proj-entry');
+  });
+</script>
+
 </body>
 </html>`
